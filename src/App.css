@@ -1,0 +1,67 @@
+.App {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+}
+.landing-page{
+ display: grid;
+
+}
+
+.user{
+  width: 20vh;
+  height:10vw;
+  text-align: center;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.user-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  justify-content: center;
+    grid-gap: 10px;
+}
+
+.heading{
+  color:white;
+
+}
+#reflix{
+  float: right;
+  color: aqua
+}
+
+*{
+  color: white;
+  text-decoration: none;
+}
+
+#budget{
+  float: right;
+}
+
+.movie-page{
+  background-color: black;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+   padding: 10px;
+}
+
+.movie-page img{
+  width: 100%;
+  border-radius: 10px;
+  height: 90%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
