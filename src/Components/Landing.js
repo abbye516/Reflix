@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Landing extends Component {
     constructor() {
@@ -28,11 +28,12 @@ class Landing extends Component {
 
                     {users.map(u => {
                         return (
-                           
+                            <Link to="/catalog">
                                 <div className="user" style={{ backgroundColor: u.color }}>
-                                    <Link to="/catalog">{u.name}</Link>
+                                    {u.name}
                                 </div>
-                           
+                            </Link>
+
                         )
                     })}
                 </div>
