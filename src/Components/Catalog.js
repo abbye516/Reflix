@@ -15,18 +15,28 @@ class Catalog extends Component {
                     <span id="reflix">Reflix</span>
                 </div>
                 <div>
-                    <input placeholder="Search"></input>
+                    <input placeholder="Search" onChange={this.props.search}></input>
                     <span id="budget">Budget:${this.props.budget}</span>
-                    <div className="movie-page">
-                        
-                        {this.props.movies.map(m => {
-                            return (
-                                <Movie id={m.id} title={m.title}
-                                    isRented={m.isRented} img={m.img} year={m.year} descrShort={m.descrShort}
-                                    rented={this.props.rented} returnMovie={this.props.returnMovie} />
-                            )
-                        })}
+
+                    <div >
+                        {this.props.budget < 10 ?
+                        <h2>Rented Movies</h2> : null}
+                        <div className="movie-page">
+                            {this.props.movies.filter(f => f.isRented)
+                                .map(m => (
+                                    <Movie id={m.id} title={m.title}
+                                        isRented={m.isRented} img={m.img} year={m.year} descrShort={m.descrShort}
+                                        rented={this.props.rented} returnMovie={this.props.returnMovie} />))}
+                        </div>
                     </div>
+                            <h2>Catalog</h2>
+                        <div className="movie-page">
+                            {this.props.movies.map(m => (
+                                    <Movie id={m.id} title={m.title}
+                                        isRented={m.isRented} img={m.img} year={m.year} descrShort={m.descrShort}
+                                        rented={this.props.rented} returnMovie={this.props.returnMovie} />))}
+                        </div>
+
                 </div>
             </div>
         )

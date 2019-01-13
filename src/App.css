@@ -78,5 +78,8 @@
   margin: auto;
 }
 
+input, select, textarea{
+  color: black;
+}
 
 

@@ -40,18 +40,7 @@ class App extends Component {
     else if(!updatedMovies[movieID].isRented && newBudget <2){
       alert("sorry you don't have enough money to rent this movie")
     }
-    this.setState({
-      movies : updatedMovies,
-      budget: newBudget
-    })
-
-
-    }
-  
-  returnMovie = (movieID) => {
-    let updatedMovies = [...this.state.movies]
-    let newBudget = this.state.budget  
-    if(updatedMovies[movieID]){
+    else if(updatedMovies[movieID].isRented){
       updatedMovies[movieID].isRented = false
       newBudget += 3
     }
@@ -59,6 +48,12 @@ class App extends Component {
       movies : updatedMovies,
       budget: newBudget
     })
+    }
+  searchMovie = (event) =>{
+    const word = event.target.value.toLowerCase()
+    let updatedMovies = [...this.state.movies]
+    let titles = updatedMovies[0].title
+    console.log(titles)
   }
   render() {
     // console.log(this.state.movies)
@@ -68,7 +63,7 @@ class App extends Component {
           <div>
           </div>
           <Route path="/" exact component={Landing} />
-          <Route path="/catalog" exact render={({ match }) => <Catalog match={match} movies={this.state.movies} budget={this.state.budget} rented={this.rented} returnMovie={this.returnMovie} />} />
+          <Route path="/catalog" exact render={({ match }) => <Catalog match={match} movies={this.state.movies} budget={this.state.budget} rented={this.rented} returnMovie={this.returnMovie} search={this.searchMovie}/>} />
           <Route path="/movies/:id" exact render={({ match }) => <MovieDetail match={match} movies={this.state.movies} />} />
         </div>
       </Router>
