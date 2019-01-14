@@ -15,11 +15,11 @@ class Catalog extends Component {
                     <span id="reflix">Reflix</span>
                 </div>
                 <div className="input-bud">
-                    <input placeholder="Search" onChange={this.props.search} onChange={this.props.resetSearch}></input>
+                    <input placeholder="Search" value={this.props.searchText}  onChange={this.props.search} ></input>
                     <span id="budget">Budget:${this.props.budget}</span>
 
                     <div >
-                        {this.props.budget < 10 ?
+                        {this.props.budget < 10  ?
                             <h2>Rented Movies</h2> : null}
                         <div className="movie-page">
                             {this.props.movies.filter(f => f.isRented)
