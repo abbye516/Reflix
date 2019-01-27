@@ -11,9 +11,10 @@ class Movie extends Component {
         return (
         
             <div className="catalog">
-                <FontAwesomeIcon  onClick={this.rented} icon={this.props.isRented === false ? "plus" : "minus"} />
+                <FontAwesomeIcon className="icons" onClick={this.rented} 
+                    icon={this.props.isRented === false ? "plus" : "minus"} />
                 <Link to={"/movies/" + this.props.id}>
-                    <img src={this.props.img}></img>
+                    <img src={this.props.img} alt={this.props.title} ></img>
                 </Link>
             </div>
             

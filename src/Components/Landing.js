@@ -22,7 +22,7 @@ class Landing extends Component {
                     <span ><Link to="/catalog" >Catalog</Link> </span>
                     <span id="reflix">Reflix</span>
                 </div>
-                <h2 className="heading" >Who's Watching?</h2>
+                <h1 className="heading" >Who's Watching?</h1>
 
                 <div className="user-container">
 
@@ -30,7 +30,7 @@ class Landing extends Component {
                         return (
                             <Link to="/catalog">
                                 <div className="user" style={{ backgroundColor: u.color }}>
-                                    {u.name}
+                                    <div className="ind-user">{u.name}</div>
                                 </div>
                             </Link>
 
