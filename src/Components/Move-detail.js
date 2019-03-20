@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 
 class MovieDetail extends Component {
 
@@ -9,14 +9,10 @@ class MovieDetail extends Component {
         const movie = allMovies.find(f => {
             return (f.id === wantedMovieId)
         })
-        
+
         return (
             <div>
-                <div className="home-links">
-                    <span><Link to="/">Home</Link> </span>
-                    <span><Link to="/catalog">Catalog</Link> </span>
-                    <span id="reflix">Reflix</span>
-                </div>
+                <NavBar />
                 <div className="movie-details">
                     <span>{movie.title} ({movie.year})</span>
                     <img src={movie.img} alt={movie.title} ></img>

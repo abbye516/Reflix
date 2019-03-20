@@ -9,7 +9,6 @@ class Movie extends Component {
     }
     render() {
         return (
-        
             <div className="catalog">
                 <FontAwesomeIcon className="icons" onClick={this.rented} 
                     icon={this.props.isRented === false ? "plus" : "minus"} />

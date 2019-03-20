@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 
 class Landing extends Component {
     constructor() {
@@ -17,11 +18,7 @@ class Landing extends Component {
         let users = this.state.users
         return (
             <div className="landing-page">
-                <div className="home-links">
-                    <span>Home </span>
-                    <span ><Link to="/catalog" >Catalog</Link> </span>
-                    <span id="reflix">Reflix</span>
-                </div>
+               <NavBar />
                 <h1 className="heading" >Who's Watching?</h1>
 
                 <div className="user-container">
